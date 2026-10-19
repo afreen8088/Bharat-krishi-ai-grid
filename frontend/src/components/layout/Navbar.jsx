@@ -39,33 +39,25 @@ export const Navbar = () => {
         padding: '0.85rem 0'
       }}
     >
-      {/* Top-left subtle botanical flourish */}
+      {/* Top-left subtle botanical decoration matching reference */}
       <svg
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '72px',
-          height: '72px',
+          width: '84px',
+          height: '84px',
           pointerEvents: 'none',
-          opacity: 0.35,
           zIndex: 0
         }}
         viewBox="0 0 100 100"
         fill="none"
       >
-        <path
-          d="M0 0 C30 10, 50 35, 60 70 C40 60, 20 40, 0 0 Z"
-          fill="#D6A84F"
-          opacity="0.3"
-        />
-        <path
-          d="M0 0 C20 25, 30 55, 35 90 C25 65, 10 35, 0 0 Z"
-          fill="#173F2A"
-          opacity="0.25"
-        />
-        <circle cx="15" cy="15" r="2.5" fill="#D6A84F" opacity="0.6" />
-        <circle cx="30" cy="28" r="2" fill="#173F2A" opacity="0.5" />
+        <path d="M0 0 Q25 15 45 45 Q65 75 75 100" stroke="#173F2A" strokeWidth="1.2" strokeLinecap="round" opacity="0.25" />
+        <path d="M12 8 C18 4 25 10 24 16 C20 20 14 18 12 8 Z" fill="#173F2A" opacity="0.2" />
+        <path d="M22 22 C30 18 36 24 34 30 C28 34 22 30 22 22 Z" fill="#D6A84F" opacity="0.25" />
+        <path d="M38 42 C46 38 52 44 50 50 C44 54 38 50 38 42 Z" fill="#173F2A" opacity="0.18" />
+        <path d="M0 25 C10 22 18 28 16 35 C10 40 4 36 0 25 Z" fill="#D6A84F" opacity="0.2" />
       </svg>
 
       <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
@@ -77,77 +69,107 @@ export const Navbar = () => {
           style={{ display: 'none', alignItems: 'center', gap: '2rem' }}
           className="desktop-nav"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.path}
-              onClick={() => handleNavClick(link.path)}
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontWeight: 500,
-                fontSize: '0.95rem',
-                color: location.pathname === link.path && !link.path.includes('#') ? '#173F2A' : '#4A554D',
-                transition: 'color 0.2s ease',
-                position: 'relative',
-                padding: '4px 0'
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isHomeActive = link.label === 'Home' && location.pathname === '/' && (!location.hash || location.hash === '');
+            const isActive = isHomeActive || (location.pathname === link.path && !link.path.includes('#'));
+            return (
+              <Link
+                key={link.label}
+                to={link.path}
+                onClick={() => handleNavClick(link.path)}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontWeight: isActive ? 600 : 500,
+                  fontSize: '0.95rem',
+                  color: isActive ? '#173F2A' : '#4D554E',
+                  transition: 'color 0.2s ease',
+                  position: 'relative',
+                  padding: '6px 0',
+                  display: 'inline-block'
+                }}
+              >
+                {link.label}
+                {isHomeActive && (
+                  <span 
+                    style={{
+                      position: 'absolute',
+                      bottom: '0px',
+                      left: '0px',
+                      right: '0px',
+                      height: '2px',
+                      backgroundColor: '#D6A84F',
+                      borderRadius: '1px'
+                    }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Right Section: Community Message & Forest-Green Login Button */}
-        <div style={{ display: 'none', alignItems: 'center', gap: '1.25rem' }} className="desktop-nav">
-          <div 
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '7px',
-              fontSize: '0.82rem',
-              color: '#173F2A',
-              backgroundColor: 'rgba(221, 228, 208, 0.45)',
-              padding: '6px 14px',
-              borderRadius: '9999px',
-              border: '1px solid #DDE4D0',
-              fontWeight: 500
-            }}
-          >
-            <Sprout size={15} color="#D6A84F" />
-            <span>For Indian Farming Communities</span>
+        {/* Right Section: Botanical Icon + Two-line text + Forest-Green Login Button */}
+        <div style={{ display: 'none', alignItems: 'center', gap: '1.5rem' }} className="desktop-nav">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div 
+              style={{
+                width: '34px',
+                height: '34px',
+                borderRadius: '8px',
+                backgroundColor: '#EEF3E6',
+                border: '1px solid #DDE4D0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}
+            >
+              <Sprout size={18} color="#173F2A" />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#173F2A' }}>For a Stronger</span>
+              <span style={{ fontSize: '0.74rem', fontWeight: 500, color: '#4D554E' }}>Agriculture Community</span>
+            </div>
           </div>
 
           {isAuthenticated ? (
             <Link 
               to={currentUser?.role === 'officer' ? '/officer/dashboard' : '/farmer/dashboard'}
-              className="btn btn-primary btn-sm"
+              className="login-btn-header"
               style={{
                 backgroundColor: '#173F2A',
-                color: '#F7F1E3',
+                color: '#FFFFFF',
                 border: '1px solid #173F2A',
-                borderRadius: '8px',
-                padding: '0.55rem 1.25rem',
-                fontWeight: 600
+                borderRadius: '9999px',
+                padding: '0.6rem 1.4rem',
+                fontWeight: 600,
+                fontSize: '0.92rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 2px 8px rgba(23, 63, 42, 0.18)',
+                transition: 'all 0.2s ease'
               }}
             >
               <UserCheck size={16} />
-              <span>Go to {currentUser?.role === 'officer' ? 'Officer Portal' : 'Farmer Portal'}</span>
+              <span>{currentUser?.role === 'officer' ? 'Officer Portal' : 'Farmer Portal'}</span>
             </Link>
           ) : (
             <Link 
               to="/login" 
-              className="btn btn-primary btn-sm"
+              className="login-btn-header"
               style={{
                 backgroundColor: '#173F2A',
-                color: '#F7F1E3',
+                color: '#FFFFFF',
                 border: '1px solid #173F2A',
-                borderRadius: '8px',
-                padding: '0.55rem 1.35rem',
+                borderRadius: '9999px',
+                padding: '0.6rem 1.4rem',
                 fontWeight: 600,
+                fontSize: '0.92rem',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                boxShadow: '0 2px 6px rgba(23, 63, 42, 0.15)'
+                boxShadow: '0 2px 8px rgba(23, 63, 42, 0.18)',
+                transition: 'all 0.2s ease'
               }}
             >
               <span>Login</span>
@@ -189,19 +211,19 @@ export const Navbar = () => {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              fontSize: '0.82rem',
-              color: '#173F2A',
-              backgroundColor: 'rgba(221, 228, 208, 0.45)',
-              padding: '6px 12px',
+              gap: '8px',
+              backgroundColor: '#EEF3E6',
+              padding: '6px 14px',
               borderRadius: '9999px',
               border: '1px solid #DDE4D0',
-              fontWeight: 500,
               alignSelf: 'flex-start'
             }}
           >
-            <Sprout size={15} color="#D6A84F" />
-            <span>For Indian Farming Communities</span>
+            <Sprout size={16} color="#173F2A" />
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#173F2A' }}>For a Stronger</span>
+              <span style={{ fontSize: '0.72rem', fontWeight: 500, color: '#4D554E' }}>Agriculture Community</span>
+            </div>
           </div>
 
           {navLinks.map((link) => (
