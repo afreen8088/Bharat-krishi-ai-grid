@@ -8,9 +8,7 @@ import {
   Play, 
   X, 
   Sprout, 
-  CheckCircle2,
-  FileCheck2,
-  Sparkles
+  CheckCircle2
 } from 'lucide-react';
 import Navbar from '../../components/layout/Navbar';
 import Footer from '../../components/layout/Footer';
@@ -25,138 +23,172 @@ export const LandingPage = () => {
         minHeight: '100vh', 
         display: 'flex', 
         flexDirection: 'column',
-        color: '#172A21',
+        color: '#173F2A',
         fontFamily: "var(--font-body)",
         overflowX: 'hidden'
       }}
     >
       <Navbar />
 
-      {/* Hero Section */}
+      {/* =========================================================================
+          HERO SECTION — EXACT BKIG REPLICATION
+          Two-column desktop layout with organic curved farmer visual
+          ========================================================================= */}
+      {/* =========================================================================
+          HERO SECTION — FULL-SCREEN IMMERSIVE AGRICULTURAL EXPERIENCE
+          Two-column layout filling available viewport height beneath header
+          ========================================================================= */}
       <section 
+        className="hero-section"
         style={{
           position: 'relative',
-          padding: 'clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem)',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
           backgroundColor: '#F7F1E3',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          padding: 'clamp(0.5rem, 1.2vh, 1.25rem) 0',
+          boxSizing: 'border-box'
         }}
       >
-        {/* Subtle decorative botanical flourish in background */}
-        <div 
+        {/* Fine-line botanical decoration near hero top-left */}
+        <svg 
           style={{
             position: 'absolute',
-            top: '-60px',
-            right: '-60px',
-            width: '320px',
-            height: '320px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(221, 228, 208, 0.45) 0%, transparent 70%)',
+            top: '10px',
+            left: '12px',
+            width: '110px',
+            height: '110px',
+            opacity: 0.22,
             pointerEvents: 'none',
             zIndex: 0
-          }} 
-        />
+          }}
+          viewBox="0 0 100 100"
+          fill="none"
+        >
+          <path d="M10 90 Q30 50 60 30 Q80 15 95 10" stroke="#173F2A" strokeWidth="1.2" strokeLinecap="round" />
+          <path d="M28 65 C22 55 24 45 32 46 C40 47 40 58 28 65 Z" fill="#173F2A" />
+          <path d="M46 48 C42 36 48 28 56 32 C62 36 58 46 46 48 Z" fill="#D6A84F" />
+          <path d="M68 32 C68 20 78 16 82 22 C86 28 80 36 68 32 Z" fill="#173F2A" />
+          <circle cx="85" cy="18" r="2" fill="#D6A84F" />
+        </svg>
 
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+        <div 
+          className="container hero-container" 
+          style={{ 
+            position: 'relative', 
+            zIndex: 1, 
+            width: '100%', 
+            maxWidth: '1440px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            flex: 1,
+            height: '100%'
+          }}
+        >
           <div 
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: 'clamp(2.5rem, 5vw, 4.5rem)',
-              alignItems: 'center'
+              gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.25fr)',
+              gap: 'clamp(2rem, 3.5vw, 4rem)',
+              alignItems: 'center',
+              width: '100%'
             }}
             className="hero-grid"
           >
-            {/* Left Column */}
-            <div style={{ maxWidth: '580px' }}>
-              {/* Eyebrow & Harvest Gold Line */}
+            {/* ----------------- LEFT HERO COLUMN ----------------- */}
+            <div className="hero-content-group" style={{ maxWidth: '580px', width: '100%' }}>
+              {/* Short harvest-gold line followed by Eyebrow */}
               <div 
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '12px',
-                  marginBottom: '1.25rem'
+                  marginBottom: 'clamp(0.85rem, 1.8vh, 1.35rem)'
                 }}
               >
                 <span 
                   style={{
+                    width: '38px',
+                    height: '2.5px',
+                    backgroundColor: '#D6A84F',
+                    display: 'inline-block',
+                    borderRadius: '2px'
+                  }} 
+                />
+                <span 
+                  style={{
                     fontFamily: "var(--font-body)",
-                    fontSize: '0.82rem',
+                    fontSize: 'clamp(0.78rem, 0.95vw, 0.86rem)',
                     fontWeight: 700,
-                    letterSpacing: '0.14em',
+                    letterSpacing: '0.18em',
                     color: '#173F2A',
                     textTransform: 'uppercase'
                   }}
                 >
                   AI-POWERED INSIGHTS
                 </span>
-                <span 
-                  style={{
-                    width: '46px',
-                    height: '2px',
-                    backgroundColor: '#D6A84F',
-                    display: 'inline-block',
-                    borderRadius: '1px'
-                  }} 
-                />
               </div>
 
               {/* Main Heading */}
               <h1 
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: 'clamp(2.6rem, 4.5vw, 4.1rem)',
-                  lineHeight: 1.12,
+                  fontSize: 'clamp(2.5rem, 3.8vw, 3.85rem)',
+                  lineHeight: 1.1,
                   color: '#173F2A',
                   fontWeight: 700,
-                  marginBottom: '1.5rem',
-                  letterSpacing: '-0.02em'
+                  marginBottom: 'clamp(1rem, 2vh, 1.45rem)',
+                  letterSpacing: '-0.025em'
                 }}
               >
                 Empowering<br />
                 Farmers Today<br />
-                for a <span style={{ color: '#D6A84F', fontStyle: 'italic' }}>Brighter</span><br />
+                for a <span style={{ color: '#D6A84F' }}>Brighter</span><br />
                 Tomorrow
               </h1>
 
               {/* Supporting Text */}
               <p 
                 style={{
-                  fontSize: 'clamp(1.05rem, 1.8vw, 1.22rem)',
-                  color: '#4A554D',
-                  lineHeight: 1.65,
-                  marginBottom: '2.25rem',
+                  fontSize: 'clamp(0.98rem, 1.2vw, 1.14rem)',
+                  color: '#4D554E',
+                  lineHeight: 1.62,
+                  marginBottom: 'clamp(1.4rem, 2.5vh, 2.25rem)',
                   maxWidth: '520px'
                 }}
               >
                 AI-driven crop insurance, real-time market prices and government schemes — built for every farmer.
               </p>
 
-              {/* CTA Group: Get Started + Watch Video */}
+              {/* Hero Actions: Get Started + Watch Video */}
               <div 
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   alignItems: 'center',
                   gap: '1.25rem',
-                  marginBottom: '2.5rem'
+                  marginBottom: 'clamp(1.4rem, 2.5vh, 2.25rem)'
                 }}
               >
                 <Link 
                   to="/role-selection" 
-                  className="btn btn-primary btn-lg"
+                  className="hero-primary-btn"
                   style={{
                     backgroundColor: '#173F2A',
-                    color: '#F7F1E3',
+                    color: '#FFFFFF',
                     border: '1px solid #173F2A',
-                    padding: '0.85rem 1.95rem',
-                    borderRadius: '8px',
+                    padding: '0.82rem 2.1rem',
+                    borderRadius: '9999px',
                     fontWeight: 600,
-                    fontSize: '1.02rem',
+                    fontSize: '1rem',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '10px',
-                    boxShadow: '0 4px 14px rgba(23, 63, 42, 0.22)',
-                    transition: 'all 0.2s ease'
+                    boxShadow: '0 4px 16px rgba(23, 63, 42, 0.24)',
+                    transition: 'all 0.2s ease',
+                    textDecoration: 'none'
                   }}
                 >
                   <span>Get Started</span>
@@ -176,7 +208,7 @@ export const LandingPage = () => {
                     color: '#173F2A',
                     fontFamily: "var(--font-body)",
                     fontWeight: 600,
-                    fontSize: '1rem'
+                    fontSize: '0.98rem'
                   }}
                   aria-label="Watch Video Introduction"
                 >
@@ -185,12 +217,12 @@ export const LandingPage = () => {
                       width: '42px',
                       height: '42px',
                       borderRadius: '50%',
-                      border: '2px solid #173F2A',
+                      border: '1.5px solid #D2CDC0',
                       backgroundColor: '#FFFDF7',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: '0 2px 8px rgba(23, 63, 42, 0.12)',
+                      boxShadow: '0 2px 8px rgba(23, 63, 42, 0.08)',
                       transition: 'transform 0.2s ease'
                     }}
                     className="play-icon-circle"
@@ -201,70 +233,94 @@ export const LandingPage = () => {
                 </button>
               </div>
 
-              {/* Tagline */}
+              {/* Tagline with harvest-gold vertical line */}
               <div 
                 style={{
-                  borderLeft: '3px solid #D6A84F',
-                  paddingLeft: '1.15rem',
+                  borderLeft: '2.5px solid #D6A84F',
+                  paddingLeft: '1rem',
                   fontFamily: "var(--font-heading)",
                   fontStyle: 'italic',
-                  color: '#103B27',
-                  fontSize: '1.1rem',
+                  color: '#173F2A',
+                  fontSize: 'clamp(0.98rem, 1.15vw, 1.1rem)',
                   fontWeight: 600,
-                  letterSpacing: '0.01em'
+                  letterSpacing: '0.01em',
+                  lineHeight: 1.35
                 }}
               >
                 “Healthy Farms. Prosperous Farmers. A Stronger Bharat.”
               </div>
             </div>
 
-            {/* Right Column: Realistic Farmer Visual with Organic Boundary */}
+            {/* ----------------- RIGHT HERO VISUAL (ORGANIC CURVED FARMER IMAGE) ----------------- */}
             <div 
               style={{ 
                 position: 'relative',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: '1.5rem',
-                paddingRight: '1rem'
+                width: '100%'
               }}
+              className="hero-visual-wrapper"
             >
               {/* Handwritten-style Tagline Overlay at Upper-Right */}
               <div 
                 className="handwritten-tagline"
                 style={{
                   position: 'absolute',
-                  top: '-15px',
-                  right: '15px',
-                  zIndex: 6,
-                  fontFamily: "var(--font-cursive)",
-                  fontSize: '1.55rem',
-                  fontWeight: 700,
-                  lineHeight: 1.25,
+                  top: '-24px',
+                  right: '20px',
+                  zIndex: 8,
                   textAlign: 'right',
-                  transform: 'rotate(2.5deg)',
-                  filter: 'drop-shadow(0 2px 4px rgba(247, 241, 227, 0.9))',
                   pointerEvents: 'none'
                 }}
               >
-                <div style={{ color: '#A64B2A' }}>Healthy Farms</div>
-                <div style={{ color: '#173F2A' }}>Prosperous Farmers</div>
-                <div style={{ color: '#D6A84F' }}>A Stronger Bharat</div>
+                <div 
+                  style={{
+                    fontFamily: "'Caveat', cursive",
+                    fontSize: 'clamp(1.55rem, 1.9vw, 1.85rem)',
+                    fontWeight: 700,
+                    lineHeight: 1.18,
+                    color: '#103B27',
+                    textShadow: '0 1px 4px rgba(247, 241, 227, 0.95), 0 0 10px rgba(247, 241, 227, 0.85)'
+                  }}
+                >
+                  <div>Healthy Farms</div>
+                  <div>Prosperous Farmers</div>
+                  <div>A Stronger Bharat</div>
+                </div>
+                <div 
+                  style={{
+                    width: '48px',
+                    height: '2px',
+                    backgroundColor: '#D6A84F',
+                    marginLeft: 'auto',
+                    marginTop: '4px',
+                    borderRadius: '1px'
+                  }} 
+                />
               </div>
 
-              {/* Organic Curved Container for Farmer Image */}
+              {/* SVG Definition for Organic Curved Image Mask */}
+              <svg width="0" height="0" style={{ position: 'absolute', pointerEvents: 'none' }} aria-hidden="true">
+                <defs>
+                  <clipPath id="hero-organic-mask" clipPathUnits="objectBoundingBox">
+                    <path d="M 0.22 0 L 0.96 0 Q 1 0 1 0.04 L 1 0.94 Q 1 1 0.94 1 C 0.70 0.98, 0.45 1, 0.18 0.98 C 0.08 0.97, 0.02 0.94, 0 0.86 L 0 0.42 C 0 0.18, 0.08 0, 0.22 0 Z" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              {/* Large Organic Curved Container for Agricultural Photograph */}
               <div 
                 style={{
                   position: 'relative',
                   width: '100%',
-                  maxWidth: '520px',
-                  height: '490px',
-                  borderRadius: '42% 58% 62% 38% / 46% 44% 56% 54%',
-                  overflow: 'hidden',
-                  boxShadow: '0 24px 50px rgba(23, 63, 42, 0.16)',
-                  border: '8px solid rgba(255, 253, 247, 0.85)',
-                  backgroundColor: '#DDE4D0',
-                  transition: 'border-radius 0.4s ease'
+                  maxWidth: '800px',
+                  height: 'clamp(520px, 80vh, 830px)',
+                  clipPath: 'url(#hero-organic-mask)',
+                  WebkitClipPath: 'url(#hero-organic-mask)',
+                  filter: 'drop-shadow(0 20px 42px rgba(23, 63, 42, 0.13))',
+                  backgroundColor: 'transparent',
+                  transition: 'all 0.4s ease'
                 }}
                 className="organic-hero-shape"
               >
@@ -275,18 +331,31 @@ export const LandingPage = () => {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'center 40%',
+                    objectPosition: 'center 35%',
                     display: 'block'
                   }}
                   loading="eager"
                 />
 
-                {/* Subtle warm organic gradient overlay blending into base */}
+                {/* Left-edge soft ivory blend overlay */}
+                <div 
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    bottom: 0,
+                    width: '26%',
+                    background: 'linear-gradient(to right, rgba(247, 241, 227, 0.4) 0%, transparent 100%)',
+                    pointerEvents: 'none'
+                  }}
+                />
+
+                {/* Subtle bottom warm vignette overlay */}
                 <div 
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(180deg, rgba(247, 241, 227, 0.05) 0%, rgba(23, 63, 42, 0.25) 100%)',
+                    background: 'linear-gradient(180deg, rgba(247, 241, 227, 0.02) 0%, rgba(23, 63, 42, 0.22) 100%)',
                     pointerEvents: 'none'
                   }}
                 />
@@ -296,24 +365,25 @@ export const LandingPage = () => {
               <div 
                 style={{
                   position: 'absolute',
-                  bottom: '15px',
-                  right: '10px',
+                  bottom: '20px',
+                  right: '16px',
                   backgroundColor: '#FFFDF7',
                   borderRadius: '16px',
-                  padding: '0.85rem 1.25rem',
+                  padding: '0.9rem 1.35rem',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '12px',
-                  boxShadow: '0 12px 28px rgba(23, 63, 42, 0.16)',
-                  border: '1.5px solid #E8DFCE',
-                  zIndex: 5,
-                  maxWidth: '300px'
+                  boxShadow: '0 12px 32px rgba(23, 63, 42, 0.15)',
+                  border: '1.5px solid #ECE3D4',
+                  zIndex: 7,
+                  maxWidth: '315px'
                 }}
+                className="floating-info-card"
               >
                 <div 
                   style={{
-                    width: '40px',
-                    height: '40px',
+                    width: '42px',
+                    height: '42px',
                     borderRadius: '10px',
                     backgroundColor: '#EEF3E6',
                     border: '1px solid #DDE4D0',
@@ -325,16 +395,27 @@ export const LandingPage = () => {
                 >
                   <Sprout size={22} color="#173F2A" />
                 </div>
-                <div 
-                  style={{
-                    fontFamily: "var(--font-heading)",
-                    fontSize: '0.96rem',
-                    fontWeight: 700,
-                    color: '#173F2A',
-                    lineHeight: 1.25
-                  }}
-                >
-                  Better Insights for Better Decisions
+                <div>
+                  <div 
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      fontSize: '0.96rem',
+                      fontWeight: 700,
+                      color: '#173F2A',
+                      lineHeight: 1.25,
+                      marginBottom: '4px'
+                    }}
+                  >
+                    Better Insights for Better Decisions
+                  </div>
+                  <div 
+                    style={{
+                      width: '32px',
+                      height: '2px',
+                      backgroundColor: '#D6A84F',
+                      borderRadius: '1px'
+                    }} 
+                  />
                 </div>
               </div>
             </div>
@@ -342,11 +423,13 @@ export const LandingPage = () => {
         </div>
       </section>
 
-      {/* Three Feature Cards Section */}
+      {/* =========================================================================
+          FEATURE CARDS — EXACTLY THREE IN ONE HORIZONTAL ROW
+          ========================================================================= */}
       <section 
         id="features" 
         style={{ 
-          padding: 'clamp(3rem, 6vw, 5.5rem) 0', 
+          padding: 'clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3.5rem, 6vw, 5rem)', 
           backgroundColor: '#F7F1E3'
         }}
       >
@@ -354,17 +437,18 @@ export const LandingPage = () => {
           <div 
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: 'clamp(1.5rem, 3vw, 2.25rem)',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: 'clamp(1.5rem, 2.5vw, 2.25rem)',
               alignItems: 'stretch'
             }}
+            className="features-grid"
           >
-            {/* Card 1: Soft Sage Treatment — Crop Insurance Fraud Detection */}
+            {/* ----------------- CARD 1: CROP INSURANCE FRAUD DETECTION ----------------- */}
             <div 
               style={{
                 backgroundColor: '#EDF3E7',
                 border: '1.5px solid #D2DEC6',
-                borderRadius: '20px',
+                borderRadius: '22px',
                 padding: '2.25rem 2rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -374,14 +458,14 @@ export const LandingPage = () => {
               }}
               className="feature-card"
             >
-              {/* Subtle Botanical SVG Motif in Corner */}
+              {/* Subtle Botanical SVG Motif */}
               <svg 
                 style={{
                   position: 'absolute',
                   top: '16px',
                   right: '16px',
-                  width: '54px',
-                  height: '54px',
+                  width: '52px',
+                  height: '52px',
                   opacity: 0.18,
                   pointerEvents: 'none'
                 }}
@@ -392,28 +476,28 @@ export const LandingPage = () => {
                 <path d="M24 10V40" stroke="#173F2A" strokeWidth="2" strokeLinecap="round" />
               </svg>
 
-              {/* Square Rounded Icon */}
+              {/* Forest-green Rounded-square Icon Container with White Shield Icon */}
               <div 
                 style={{
-                  width: '56px',
-                  height: '56px',
+                  width: '54px',
+                  height: '54px',
                   borderRadius: '14px',
-                  backgroundColor: '#DFEBD5',
-                  border: '1px solid #CBDABF',
+                  backgroundColor: '#173F2A',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '1.35rem'
+                  marginBottom: '1.4rem',
+                  boxShadow: '0 4px 10px rgba(23, 63, 42, 0.16)'
                 }}
               >
-                <ShieldCheck size={28} color="#173F2A" />
+                <ShieldCheck size={28} color="#FFFFFF" />
               </div>
 
               {/* Title */}
               <h3 
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: '1.35rem',
+                  fontSize: '1.32rem',
                   fontWeight: 700,
                   color: '#173F2A',
                   marginBottom: '0.75rem',
@@ -423,11 +507,11 @@ export const LandingPage = () => {
                 Crop Insurance Fraud Detection
               </h3>
 
-              {/* Text */}
+              {/* Description */}
               <p 
                 style={{
-                  color: '#4E5A51',
-                  fontSize: '0.98rem',
+                  color: '#4D554E',
+                  fontSize: '0.96rem',
                   lineHeight: 1.6,
                   flex: 1,
                   marginBottom: '1.75rem'
@@ -436,8 +520,8 @@ export const LandingPage = () => {
                 Fair and transparent claim assessment using AI.
               </p>
 
-              {/* Circular Arrow Button */}
-              <div>
+              {/* Circular Arrow Button on Right */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Link 
                   to="/farmer/submit-claim" 
                   aria-label="Crop Insurance Fraud Detection"
@@ -446,12 +530,12 @@ export const LandingPage = () => {
                     height: '44px',
                     borderRadius: '50%',
                     backgroundColor: '#173F2A',
-                    color: '#F7F1E3',
+                    color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     transition: 'transform 0.2s ease, background-color 0.2s ease',
-                    boxShadow: '0 3px 8px rgba(23, 63, 42, 0.2)'
+                    boxShadow: '0 3px 10px rgba(23, 63, 42, 0.2)'
                   }}
                   className="arrow-circle-btn"
                 >
@@ -460,12 +544,12 @@ export const LandingPage = () => {
               </div>
             </div>
 
-            {/* Card 2: Cream/Gold Treatment — Mandi Price Intelligence */}
+            {/* ----------------- CARD 2: MANDI PRICE INTELLIGENCE ----------------- */}
             <div 
               style={{
-                backgroundColor: '#FAF4E6',
+                backgroundColor: '#FAF3E4',
                 border: '1.5px solid #EADBBA',
-                borderRadius: '20px',
+                borderRadius: '22px',
                 padding: '2.25rem 2rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -481,9 +565,9 @@ export const LandingPage = () => {
                   position: 'absolute',
                   top: '16px',
                   right: '16px',
-                  width: '54px',
-                  height: '54px',
-                  opacity: 0.22,
+                  width: '52px',
+                  height: '52px',
+                  opacity: 0.2,
                   pointerEvents: 'none'
                 }}
                 viewBox="0 0 48 48"
@@ -493,28 +577,28 @@ export const LandingPage = () => {
                 <path d="M24 10V38" stroke="#D6A84F" strokeWidth="2" strokeLinecap="round" />
               </svg>
 
-              {/* Square Rounded Icon */}
+              {/* Gold Rounded-square Icon Container with White Bar-Chart Icon */}
               <div 
                 style={{
-                  width: '56px',
-                  height: '56px',
+                  width: '54px',
+                  height: '54px',
                   borderRadius: '14px',
-                  backgroundColor: '#F5EBCE',
-                  border: '1px solid #E5D5AE',
+                  backgroundColor: '#D6A84F',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '1.35rem'
+                  marginBottom: '1.4rem',
+                  boxShadow: '0 4px 10px rgba(214, 168, 79, 0.2)'
                 }}
               >
-                <TrendingUp size={28} color="#C5963E" />
+                <TrendingUp size={28} color="#FFFFFF" />
               </div>
 
               {/* Title */}
               <h3 
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: '1.35rem',
+                  fontSize: '1.32rem',
                   fontWeight: 700,
                   color: '#173F2A',
                   marginBottom: '0.75rem',
@@ -524,11 +608,11 @@ export const LandingPage = () => {
                 Mandi Price Intelligence
               </h3>
 
-              {/* Text */}
+              {/* Description */}
               <p 
                 style={{
-                  color: '#555F55',
-                  fontSize: '0.98rem',
+                  color: '#4D554E',
+                  fontSize: '0.96rem',
                   lineHeight: 1.6,
                   flex: 1,
                   marginBottom: '1.75rem'
@@ -537,8 +621,8 @@ export const LandingPage = () => {
                 Compare market prices and choose the best selling option.
               </p>
 
-              {/* Circular Arrow Button */}
-              <div>
+              {/* Circular Arrow Button on Right */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Link 
                   to="/farmer/mandi-prices" 
                   aria-label="Mandi Price Intelligence"
@@ -547,12 +631,12 @@ export const LandingPage = () => {
                     height: '44px',
                     borderRadius: '50%',
                     backgroundColor: '#173F2A',
-                    color: '#F7F1E3',
+                    color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     transition: 'transform 0.2s ease, background-color 0.2s ease',
-                    boxShadow: '0 3px 8px rgba(23, 63, 42, 0.2)'
+                    boxShadow: '0 3px 10px rgba(23, 63, 42, 0.2)'
                   }}
                   className="arrow-circle-btn"
                 >
@@ -561,12 +645,12 @@ export const LandingPage = () => {
               </div>
             </div>
 
-            {/* Card 3: Warm Beige / Terracotta Treatment — Government Scheme Finder */}
+            {/* ----------------- CARD 3: GOVERNMENT SCHEME FINDER ----------------- */}
             <div 
               style={{
-                backgroundColor: '#FAF0EB',
+                backgroundColor: '#F9EFEB',
                 border: '1.5px solid #ECCDC1',
-                borderRadius: '20px',
+                borderRadius: '22px',
                 padding: '2.25rem 2rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -582,9 +666,9 @@ export const LandingPage = () => {
                   position: 'absolute',
                   top: '16px',
                   right: '16px',
-                  width: '54px',
-                  height: '54px',
-                  opacity: 0.2,
+                  width: '52px',
+                  height: '52px',
+                  opacity: 0.18,
                   pointerEvents: 'none'
                 }}
                 viewBox="0 0 48 48"
@@ -594,28 +678,28 @@ export const LandingPage = () => {
                 <path d="M24 10V38" stroke="#A64B2A" strokeWidth="2" strokeLinecap="round" />
               </svg>
 
-              {/* Square Rounded Icon */}
+              {/* Terracotta Rounded-square Icon Container with White Document Icon */}
               <div 
                 style={{
-                  width: '56px',
-                  height: '56px',
+                  width: '54px',
+                  height: '54px',
                   borderRadius: '14px',
-                  backgroundColor: '#F5DFD5',
-                  border: '1px solid #E8C8BA',
+                  backgroundColor: '#A64B2A',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '1.35rem'
+                  marginBottom: '1.4rem',
+                  boxShadow: '0 4px 10px rgba(166, 75, 42, 0.2)'
                 }}
               >
-                <ScrollText size={28} color="#A64B2A" />
+                <ScrollText size={28} color="#FFFFFF" />
               </div>
 
               {/* Title */}
               <h3 
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontSize: '1.35rem',
+                  fontSize: '1.32rem',
                   fontWeight: 700,
                   color: '#173F2A',
                   marginBottom: '0.75rem',
@@ -625,11 +709,11 @@ export const LandingPage = () => {
                 Government Scheme Finder
               </h3>
 
-              {/* Text */}
+              {/* Description */}
               <p 
                 style={{
-                  color: '#555550',
-                  fontSize: '0.98rem',
+                  color: '#4D554E',
+                  fontSize: '0.96rem',
                   lineHeight: 1.6,
                   flex: 1,
                   marginBottom: '1.75rem'
@@ -638,8 +722,8 @@ export const LandingPage = () => {
                 Find schemes you are eligible for with ease.
               </p>
 
-              {/* Circular Arrow Button */}
-              <div>
+              {/* Circular Arrow Button on Right */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Link 
                   to="/farmer/schemes" 
                   aria-label="Government Scheme Finder"
@@ -648,12 +732,12 @@ export const LandingPage = () => {
                     height: '44px',
                     borderRadius: '50%',
                     backgroundColor: '#173F2A',
-                    color: '#F7F1E3',
+                    color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     transition: 'transform 0.2s ease, background-color 0.2s ease',
-                    boxShadow: '0 3px 8px rgba(23, 63, 42, 0.2)'
+                    boxShadow: '0 3px 10px rgba(23, 63, 42, 0.2)'
                   }}
                   className="arrow-circle-btn"
                 >
@@ -665,194 +749,245 @@ export const LandingPage = () => {
         </div>
       </section>
 
-      {/* Vision Section */}
+      {/* =========================================================================
+          VISION SECTION — EXACT LOWER SECTION REPLICATION
+          Pale Sage Green background with soft flowing organic top edge
+          Left: Label + Heading | Middle: Description | Right: Rural Landscape with cursive text
+          ========================================================================= */}
       <section 
         id="impact" 
         style={{ 
-          padding: 'clamp(3rem, 6vw, 5.5rem) 0 clamp(4rem, 7vw, 6.5rem)',
-          backgroundColor: '#F7F1E3'
+          position: 'relative',
+          backgroundColor: '#DDE4D0',
+          paddingTop: '0',
+          paddingBottom: 'clamp(3.5rem, 6vw, 5.5rem)',
+          overflow: 'hidden'
         }}
       >
-        <div className="container">
+        {/* Soft flowing organic top edge transition from Ivory to Pale Sage Green */}
+        <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, backgroundColor: '#F7F1E3' }}>
+          <svg 
+            viewBox="0 0 1440 70" 
+            fill="none" 
+            style={{ width: '100%', height: 'clamp(40px, 5vw, 65px)', display: 'block' }}
+            preserveAspectRatio="none"
+          >
+            <path 
+              d="M0,28 C280,68 580,8 920,48 C1160,74 1340,32 1440,36 L1440,70 L0,70 Z" 
+              fill="#DDE4D0" 
+            />
+          </svg>
+        </div>
+
+        {/* Botanical foliage illustration along left side */}
+        <svg 
+          style={{
+            position: 'absolute',
+            top: '80px',
+            left: 0,
+            width: '180px',
+            height: '240px',
+            opacity: 0.22,
+            pointerEvents: 'none',
+            zIndex: 0
+          }}
+          viewBox="0 0 180 240"
+          fill="none"
+        >
+          <path d="M0 240 Q40 180 60 120 Q80 60 110 0" stroke="#173F2A" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M42 165 C52 145 68 150 64 165 C58 178 46 178 42 165 Z" fill="#173F2A" />
+          <path d="M60 120 C75 105 92 112 85 128 C78 140 65 135 60 120 Z" fill="#D6A84F" />
+          <path d="M82 75 C100 62 115 72 106 88 C98 100 86 92 82 75 Z" fill="#173F2A" />
+          <path d="M20 200 C32 185 45 190 40 202 C35 212 24 210 20 200 Z" fill="#173F2A" />
+        </svg>
+
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '1.5rem' }}>
           <div 
             style={{
-              position: 'relative',
-              backgroundColor: '#DDE4D0',
-              borderRadius: '28px',
-              padding: 'clamp(2.5rem, 5vw, 4.5rem) clamp(2rem, 4vw, 4rem)',
-              overflow: 'hidden',
-              boxShadow: '0 16px 40px rgba(23, 63, 42, 0.08)',
-              border: '1.5px solid #CCD5BD'
+              display: 'grid',
+              gridTemplateColumns: 'minmax(280px, 1.15fr) minmax(260px, 1fr) minmax(320px, 1.25fr)',
+              gap: 'clamp(2rem, 3.5vw, 3.5rem)',
+              alignItems: 'center'
             }}
-            className="vision-card"
+            className="vision-grid"
           >
-            {/* Botanical Decoration around Edges */}
-            <svg 
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '160px',
-                height: '160px',
-                opacity: 0.22,
-                pointerEvents: 'none'
-              }}
-              viewBox="0 0 160 160"
-              fill="none"
-            >
-              <path d="M0 0 C40 20, 70 60, 90 120 C60 100, 30 70, 0 0 Z" fill="#173F2A" />
-              <path d="M0 0 C30 40, 50 90, 60 150 C40 110, 20 60, 0 0 Z" fill="#D6A84F" />
-            </svg>
-
-            <svg 
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                left: '30%',
-                width: '140px',
-                height: '90px',
-                opacity: 0.18,
-                pointerEvents: 'none'
-              }}
-              viewBox="0 0 140 90"
-              fill="none"
-            >
-              <path d="M0 90 C30 60, 60 40, 100 20 C80 50, 50 80, 0 90 Z" fill="#173F2A" />
-            </svg>
-
-            {/* Grid for Vision text and Rural Landscape Imagery */}
-            <div 
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: 'clamp(2rem, 4vw, 3.5rem)',
-                alignItems: 'center',
-                position: 'relative',
-                zIndex: 1
-              }}
-            >
-              {/* Left Side: Label, Heading, Supporting Paragraph */}
-              <div style={{ maxWidth: '580px' }}>
-                {/* Small Label "OUR VISION" with Gold Line */}
-                <div 
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    marginBottom: '1rem'
-                  }}
-                >
-                  <span 
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: '0.82rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.14em',
-                      color: '#173F2A',
-                      textTransform: 'uppercase'
-                    }}
-                  >
-                    OUR VISION
-                  </span>
-                  <span 
-                    style={{
-                      width: '46px',
-                      height: '2px',
-                      backgroundColor: '#D6A84F',
-                      display: 'inline-block',
-                      borderRadius: '1px'
-                    }} 
-                  />
-                </div>
-
-                {/* Heading */}
-                <h2 
-                  style={{
-                    fontFamily: "var(--font-heading)",
-                    fontSize: 'clamp(2.1rem, 3.8vw, 3.2rem)',
-                    lineHeight: 1.18,
-                    color: '#173F2A',
-                    fontWeight: 700,
-                    marginBottom: '1.25rem',
-                    letterSpacing: '-0.02em'
-                  }}
-                >
-                  Stronger Farmers<br />
-                  A Better Bharat
-                </h2>
-
-                {/* Supporting Paragraph */}
-                <p 
-                  style={{
-                    fontSize: 'clamp(1.02rem, 1.6vw, 1.15rem)',
-                    color: '#284534',
-                    lineHeight: 1.7,
-                    marginBottom: '2rem'
-                  }}
-                >
-                  Bringing data, technology, and agricultural insights together to create a transparent, accountable, and prosperous future for every farmer across India.
-                </p>
-
-                {/* Direct Action Link */}
-                <Link 
-                  to="/about"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    fontFamily: "var(--font-body)",
-                    fontWeight: 600,
-                    fontSize: '0.98rem',
-                    color: '#173F2A',
-                    paddingBottom: '2px',
-                    borderBottom: '2px solid #D6A84F'
-                  }}
-                >
-                  <span>Learn more about our architecture</span>
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-
-              {/* Right Side: Rural Landscape Imagery along the bottom-right */}
+            {/* ----------------- LEFT SIDE: LABEL & MAIN HEADING ----------------- */}
+            <div>
+              {/* Small uppercase label "OUR VISION" + short gold line */}
               <div 
                 style={{
-                  display: 'flex',
-                  justifyContent: 'center',
+                  display: 'inline-flex',
                   alignItems: 'center',
-                  position: 'relative'
+                  gap: '12px',
+                  marginBottom: '1rem'
+                }}
+              >
+                <span 
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: '0.84rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.18em',
+                    color: '#173F2A',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  OUR VISION
+                </span>
+                <span 
+                  style={{
+                    width: '38px',
+                    height: '2.5px',
+                    backgroundColor: '#D6A84F',
+                    display: 'inline-block',
+                    borderRadius: '2px'
+                  }} 
+                />
+              </div>
+
+              {/* Main Heading */}
+              <h2 
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 'clamp(2.3rem, 3.6vw, 3.2rem)',
+                  lineHeight: 1.15,
+                  color: '#173F2A',
+                  fontWeight: 700,
+                  letterSpacing: '-0.02em'
+                }}
+              >
+                Stronger Farmers<br />
+                A Better <span style={{ color: '#D6A84F' }}>Bharat</span>
+              </h2>
+            </div>
+
+            {/* ----------------- MIDDLE: DESCRIPTION ----------------- */}
+            <div>
+              <p 
+                style={{
+                  fontSize: 'clamp(1.02rem, 1.4vw, 1.14rem)',
+                  color: '#284534',
+                  lineHeight: 1.7,
+                  marginBottom: '1.5rem'
+                }}
+              >
+                We bring data, technology and real-time insights together to create a more resilient and prosperous agricultural community across India.
+              </p>
+
+              <Link 
+                to="/about"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 600,
+                  fontSize: '0.94rem',
+                  color: '#173F2A',
+                  paddingBottom: '2px',
+                  borderBottom: '2px solid #D6A84F',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>Learn more about our architecture</span>
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            {/* ----------------- RIGHT: RURAL LANDSCAPE PHOTOGRAPH + CURSIVE TEXT ----------------- */}
+            <div 
+              style={{
+                position: 'relative',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              {/* Handwritten-style Text on Landscape */}
+              <div 
+                className="vision-handwritten-text"
+                style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  right: '16px',
+                  zIndex: 4,
+                  textAlign: 'right',
+                  pointerEvents: 'none'
                 }}
               >
                 <div 
                   style={{
-                    width: '100%',
-                    maxWidth: '460px',
-                    height: '320px',
-                    borderRadius: '24px 60px 30px 50px',
-                    overflow: 'hidden',
-                    boxShadow: '0 16px 36px rgba(23, 63, 42, 0.15)',
-                    border: '5px solid rgba(255, 253, 247, 0.7)'
+                    fontFamily: "'Caveat', cursive",
+                    fontSize: '1.65rem',
+                    fontWeight: 700,
+                    lineHeight: 1.2,
+                    color: '#103B27',
+                    textShadow: '0 1px 4px rgba(221, 228, 208, 0.95)'
                   }}
-                  className="rural-landscape-container"
                 >
-                  <img 
-                    src="/images/rural-landscape.jpg" 
-                    alt="Scenic rural Indian agricultural landscape with green terraced farming and rolling hills"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block'
-                    }}
-                    loading="lazy"
-                  />
+                  <div>Our Land</div>
+                  <div>Our Farmers</div>
+                  <div>Our Future</div>
                 </div>
+                <div 
+                  style={{
+                    width: '42px',
+                    height: '2px',
+                    backgroundColor: '#D6A84F',
+                    marginLeft: 'auto',
+                    marginTop: '4px',
+                    borderRadius: '1px'
+                  }} 
+                />
+              </div>
+
+              {/* Organic Curved Container for Rural Landscape Image */}
+              <div 
+                style={{
+                  width: '100%',
+                  maxWidth: '440px',
+                  height: '290px',
+                  borderRadius: '32px 64px 36px 54px',
+                  overflow: 'hidden',
+                  boxShadow: '0 14px 36px rgba(23, 63, 42, 0.14)',
+                  border: '6px solid rgba(255, 253, 247, 0.85)',
+                  backgroundColor: '#DDE4D0',
+                  position: 'relative'
+                }}
+                className="rural-landscape-container"
+              >
+                <img 
+                  src="/images/rural-landscape.jpg" 
+                  alt="Scenic rural Indian agricultural landscape with green terraced farming and rolling hills"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center center',
+                    display: 'block'
+                  }}
+                  loading="lazy"
+                />
+
+                {/* Soft gradient blend into sage background */}
+                <div 
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(221, 228, 208, 0.05) 0%, rgba(23, 63, 42, 0.18) 100%)',
+                    pointerEvents: 'none'
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video Modal Walkthrough */}
+      {/* =========================================================================
+          VIDEO / ARCHITECTURE WALKTHROUGH MODAL
+          Interactive modal triggered by "Watch Video" button
+          ========================================================================= */}
       {videoModalOpen && (
         <div 
           className="modal-overlay"
@@ -860,7 +995,7 @@ export const LandingPage = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(16, 59, 39, 0.6)',
+            backgroundColor: 'rgba(16, 59, 39, 0.65)',
             backdropFilter: 'blur(6px)',
             display: 'flex',
             alignItems: 'center',
@@ -872,12 +1007,12 @@ export const LandingPage = () => {
           <div 
             style={{
               backgroundColor: '#FFFDF7',
-              borderRadius: '20px',
+              borderRadius: '22px',
               padding: '2rem',
               maxWidth: '640px',
               width: '100%',
               boxShadow: '0 25px 50px rgba(0,0,0,0.25)',
-              border: '1px solid #E8DFCE',
+              border: '1.5px solid #E8DFCE',
               position: 'relative'
             }}
             onClick={(e) => e.stopPropagation()}
@@ -904,23 +1039,23 @@ export const LandingPage = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.75rem' }}>
               <div 
                 style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '10px',
                   backgroundColor: '#EEF3E6',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}
               >
-                <Sprout size={20} color="#173F2A" />
+                <Sprout size={22} color="#173F2A" />
               </div>
               <h3 style={{ fontFamily: "var(--font-heading)", fontSize: '1.35rem', color: '#173F2A' }}>
                 Bharat Krishi Intelligence Grid Overview
               </h3>
             </div>
 
-            <p style={{ color: '#4A554D', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+            <p style={{ color: '#4D554E', fontSize: '0.96rem', marginBottom: '1.5rem', lineHeight: 1.6 }}>
               Experience how BKIG unifies satellite telemetry, historical weather indices, and transparent mandi intelligence for Indian agriculture.
             </p>
 
@@ -935,7 +1070,7 @@ export const LandingPage = () => {
                 textAlign: 'center',
                 marginBottom: '1.5rem',
                 position: 'relative',
-                border: '1px solid #D6A84F'
+                border: '1.5px solid #D6A84F'
               }}
             >
               <div 
@@ -956,33 +1091,33 @@ export const LandingPage = () => {
               <div style={{ fontFamily: "var(--font-heading)", fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
                 BKIG Architecture & Interactive Walkthrough
               </div>
-              <div style={{ fontSize: '0.85rem', color: '#DDE4D0', maxWidth: '420px', margin: '0 auto' }}>
+              <div style={{ fontSize: '0.86rem', color: '#DDE4D0', maxWidth: '440px', margin: '0 auto' }}>
                 Simulating automated NDVI vegetative analysis, local rainfall verification, and direct farmer welfare subsidies.
               </div>
             </div>
 
             {/* Feature Bullets */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem', marginBottom: '1.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#172A21' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#173F2A' }}>
                 <CheckCircle2 size={16} color="#2A6F4E" />
                 <span>AI Fraud Assessment</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#172A21' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#173F2A' }}>
                 <CheckCircle2 size={16} color="#2A6F4E" />
                 <span>Live Multistate Mandis</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#172A21' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#173F2A' }}>
                 <CheckCircle2 size={16} color="#2A6F4E" />
                 <span>Welfare Scheme Finder</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#172A21' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#173F2A' }}>
                 <CheckCircle2 size={16} color="#2A6F4E" />
                 <span>100% Objective Decisions</span>
               </div>
             </div>
 
             {/* Actions */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
               <button 
                 onClick={() => setVideoModalOpen(false)}
                 className="btn btn-secondary btn-sm"
@@ -993,7 +1128,7 @@ export const LandingPage = () => {
                 to="/role-selection"
                 className="btn btn-primary btn-sm"
                 onClick={() => setVideoModalOpen(false)}
-                style={{ backgroundColor: '#173F2A', color: '#F7F1E3' }}
+                style={{ backgroundColor: '#173F2A', color: '#FFFFFF' }}
               >
                 <span>Launch Interactive Demo</span>
                 <ArrowRight size={14} />
@@ -1005,8 +1140,24 @@ export const LandingPage = () => {
 
       <Footer />
 
-      {/* Responsive and Hover Style Enhancements */}
+      {/* Responsive & Hover Style Enhancements */}
       <style>{`
+        .hero-section {
+          min-height: calc(100vh - var(--header-height, 73px));
+          min-height: calc(100svh - var(--header-height, 73px));
+        }
+        .hero-container {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+        }
+        .hero-primary-btn:hover {
+          background-color: #103B27 !important;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(23, 63, 42, 0.3) !important;
+        }
         .play-icon-circle:hover {
           transform: scale(1.08);
           background-color: #F7F1E3 !important;
@@ -1019,21 +1170,81 @@ export const LandingPage = () => {
           transform: scale(1.08);
           background-color: #103B27 !important;
         }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+          .vision-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 2rem !important;
+          }
+          .vision-grid > div:last-child {
+            grid-column: span 2;
+          }
+        }
+
         @media (max-width: 960px) {
+          .hero-section {
+            min-height: auto !important;
+            padding: clamp(2rem, 5vw, 3rem) 0 3.5rem 0 !important;
+          }
+          .hero-container {
+            height: auto !important;
+          }
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
+          }
+          .hero-visual-wrapper {
+            flex-direction: column !important;
+          }
+          .features-grid {
+            grid-template-columns: 1fr !important;
           }
           .handwritten-tagline {
             position: relative !important;
             top: 0 !important;
             right: 0 !important;
-            margin-bottom: 0.75rem !important;
+            margin-bottom: 1rem !important;
             text-align: center !important;
-            transform: none !important;
+          }
+          .handwritten-tagline > div:last-child {
+            margin: 4px auto 0 !important;
           }
           .organic-hero-shape {
             height: 380px !important;
+            max-width: 100% !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .organic-hero-shape {
+            height: 320px !important;
+          }
+          .floating-info-card {
+            position: relative !important;
+            bottom: auto !important;
+            right: auto !important;
+            margin: 1rem auto 0 !important;
+            max-width: 100% !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .vision-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .vision-grid > div:last-child {
+            grid-column: span 1 !important;
+          }
+          .vision-handwritten-text {
+            position: relative !important;
+            top: 0 !important;
+            right: 0 !important;
+            margin-bottom: 0.75rem !important;
+            text-align: center !important;
+          }
+          .vision-handwritten-text > div:last-child {
+            margin: 4px auto 0 !important;
           }
         }
       `}</style>

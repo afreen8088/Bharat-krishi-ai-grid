@@ -1,5 +1,5 @@
 :root {
-  /* Brand Color Palette */
+  /* Brand Color Palette - Exact BKIG Specification */
   --color-forest-green: #173F2A;
   --color-deep-green: #103B27;
   --color-ivory-bg: #F7F1E3;
@@ -12,13 +12,13 @@
   --color-sage-light: #EEF3E6;
   
   /* Text and Neutral Colors */
-  --color-text-primary: #172A21;
-  --color-text-secondary: #667168;
-  --color-text-muted: #8E9990;
-  --color-border: #E4E0D5;
-  --color-border-subtle: #EDEAE1;
+  --color-text-primary: #173F2A;
+  --color-text-secondary: #4D554E;
+  --color-text-muted: #7A857D;
+  --color-border: #E4DEC9;
+  --color-border-subtle: #ECE6D5;
   --color-surface-white: #FFFFFF;
-  --color-surface-card: #FFFFFF;
+  --color-surface-card: #FFFDF7;
   
   /* Status Colors (Accessible, Agricultural-themed) */
   --color-status-success: #2A6F4E;
@@ -68,6 +68,7 @@
   --shadow-xl: 0 20px 40px rgba(23, 42, 33, 0.12);
 
   /* Layout */
+  --header-height: 73px;
   --sidebar-width: 260px;
   --sidebar-collapsed-width: 80px;
   --topbar-height: 70px;
